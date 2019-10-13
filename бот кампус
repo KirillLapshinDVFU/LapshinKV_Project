@@ -1,0 +1,21 @@
+import vk_api
+import time
+import random
+
+token = "12b0be310696283ce8b3ebfd3456efcfcffcba319494825ec64da13c9d6101b0b705252b6f2c15b020e8e"
+
+vk = vk_api.VkApi(token=token)
+
+vk._auth_token()
+
+while True:
+    try:
+        messages = vk.method("messages.getConversations", {"offset": 0, "count": 20, "filter": "unanswered"})
+        if messages["count"] >= 1:
+            id = messages["items"][0]["last_message"]["from_id"]
+            body = messages["items"][0]["last_message"]["text"]
+            if body.lower() == "привет":
+                vk.method("messages.send",
+                          {"peer_id": id, "message": "Привет, напиши ,пожалуйста, корпус, в котором ты сейчас находишься (A, B, C, D, E, F, G, S, L, M)", "random_id": random.randint(1, 2147483647)})
+    except Exception as E:
+        time.sleep(1)
