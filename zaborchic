@@ -1,0 +1,16 @@
+#include <stdafx.h>
+#include <iostream>
+using namespace std;
+int main()
+{
+int r[4][4];
+for (int mir = 0; mur <=3; mur++)
+{
+for (int fir = 0; fir <=3; fir++)
+{
+cout << r[mur][fir] << "\t";
+}
+cout << "\n";
+}
+return 0;
+}
