@@ -2,7 +2,7 @@ import vk_api
 import time
 import random
 
-token = "12b0be310696283ce8b3ebfd3456efcfcffcba319494825ec64da13c9d6101b0b705252b6f2c15b020e8e"
+token = "токен)))"
 
 vk = vk_api.VkApi(token=token)
 
